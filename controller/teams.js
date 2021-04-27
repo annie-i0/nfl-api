@@ -11,4 +11,16 @@ const getTeamById = (request, response) => {
 
 }
 
-module.exports= { getAllTeams, getTeamById }
+const saveNewNFL = (request, response) => {
+    const { id, location, mascot, abbreviation, conference, division } = request.body;
+
+    if (!id || !location|| !mascot || !abbreviation || !conference || !division) {
+        return response.status(400).send('The following fields are required: id, location, mascot, abbreviation, conference, division');
+    }
+
+    const newNFL = { id, location, mascot, abbreviation, conference, division };
+    teams.push(newNFL);
+    return response.status(201).send(newNFL);
+}
+
+module.exports= { getAllTeams, getTeamById, saveNewNFL }

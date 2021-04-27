@@ -5,7 +5,7 @@
   "main": ".eslintrc.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "lint": "eslint --format codeframe .", 
+    "lint": "eslint --format codeframe .",
     "lint:fix": "eslint --format codeframe .",
     "dev": "nodemon index.js"
   },
@@ -20,7 +20,8 @@
   },
   "homepage": "https://github.com/annie-i0/nfl-api#readme",
   "dependencies": {
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "parser": "^0.1.4"
   },
   "devDependencies": {
     "eslint": "^7.25.0",

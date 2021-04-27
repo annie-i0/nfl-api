@@ -1,12 +1,15 @@
 const express = require('express')
+const bodyParser = require('body-parser');
 const teams = require('./teams')
-const { getAllTeams, getTeamById } = require('./controller/teams')
+const { getAllTeams, getTeamById, saveNewNFL } = require('./controller/teams')
 
 const app = express()
 
 app.get('/', getAllTeams)
 
 app.get('/teams/:id', getTeamById) 
+
+app.post('/', bodyParser.json(), saveNewNFL);
   
 app.all('*', (request, response) => {
     return response.sendStatus(404)
